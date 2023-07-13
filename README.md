@@ -8,7 +8,7 @@
 <p align="center">
     <a href="#summary">Summary</a>
     •
-    <a href="#requirements">Requirements</a>
+    <a href="#usage">Usage</a>
     •
     <a href="#contributing">Contributing</a>
     •
@@ -19,7 +19,7 @@
 
 The current presentation of knowledge panels in web search engines is limited to displaying summarized information only when a query refers to a single entity. This repository contains a testbed for developing and evaluating dual-entity knowledge panels. The idea is to populate these novel knowledge panels with an explanation of the relationship between the entities of queries mentioning two of them. Previous research has demonstrated the ability to identify paths in Wikidata that connect any two entities, offering a valuable foundation for explaining their relationship. However, little research has been done on how to effectively present these paths in a user-friendly manner within this context. Therefore, this repository features a few pre-implemented presentation forms, such as graph-based visualizations and text-based approaches utilizing language models, to encourage further investigation in this area.
 
-## Requirements & Usage
+## Usage
 
 Only the `docker` and `docker compose` scripts are required to run the programs within this repository. All dependencies are automatically installed using the corresponding Dockerfiles. This ensures reproducibility and ease of use. For guidance on how to install Docker click [here](https://docs.docker.com/get-docker/). To run the testbed proceed as follows:
 
