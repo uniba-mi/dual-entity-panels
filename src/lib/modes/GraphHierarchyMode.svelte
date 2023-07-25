@@ -30,10 +30,10 @@
     });
 
     const relations = getPathRelations(theSelectedPath.parsedPath);
-    const relationsFormatted = relations.map((relation) => {
+    const relationsFormatted = relations.map((relation, index) => {
       return {
         data: {
-          id: relation.predicate,
+          id: relation.predicate + index,
           source: relation.subject,
           target: relation.object,
           label: getLabelForId(relation.predicate, theSelectedPath.parsedPath),
@@ -83,9 +83,7 @@
       },
 
       userZoomingEnabled: false,
-      userPanningEnabled: false,
       boxSelectionEnabled: false,
-      autoungrabify: true,
     });
 
     const initTooltips = (element) => {

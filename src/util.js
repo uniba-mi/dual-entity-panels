@@ -8,7 +8,7 @@ const getIdFromUri = (uri) => {
 };
 
 export const loadPathData = () => {
-  const nThreeData = [
+  const turtleData = [
     {
       entityA: "Q7958",
       entityB: "Q46857",
@@ -50,15 +50,59 @@ export const loadPathData = () => {
         schema:description "item or concept that makes use of the subject (use sub-properties when appropriate)" .`,
       textual: `The found path signifies the relationship between "explanation" and "scientific method", highlighting how explanation is utilized in teaching, which contributes to the development of academic disciplines. These disciplines form the basis of scientific knowledge, leading to the application of the scientific method in the pursuit of understanding and testing scientific hypotheses.`,
     },
+    {
+      entityA: "Q81938",
+      entityB: "Q482853",
+      rawPath: `@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+    @prefix schema: <http://schema.org/> .
+    @prefix wd: <http://www.wikidata.org/entity/> .
+    @prefix wdt: <http://www.wikidata.org/prop/direct/> .
+
+    wd:Q81938 rdfs:label "pain" ;
+        schema:description "type of unpleasant feeling" ;
+        wdt:P2176 wd:Q408801 .
+
+    wd:Q408801 rdfs:label "celecoxib" ;
+        schema:description "chemical compound" ;
+        wdt:P2175 wd:Q52849 .
+
+    wd:Q52849 rdfs:label "ankylosing spondylitis" ;
+        schema:description "type of arthritis in which there is long term inflammation of the joints of the spine" ;
+        wdt:P279 wd:Q7577457 .
+
+    wd:Q7577457 rdfs:label "spinal disease" ;
+        schema:description "disease involving the vertebral column" ;
+        wdt:P927 wd:Q1979420 .
+
+    wd:Q1979420 rdfs:label "human vertebral column" ;
+        schema:description "spine of humans" ;
+        wdt:P279 wd:Q482853 .
+
+    wd:Q482853 rdfs:label "vertebral column" ;
+        schema:description "bony structure found in vertebrates" .
+
+    wd:P2176 rdfs:label "drug or therapy used for treatment" ;
+        schema:description "drug, procedure, or therapy that can be used to treat a medical condition" .
+
+    wd:P2175 rdfs:label "medical condition treated" ;
+        schema:description "disease that this pharmaceutical drug, procedure, or therapy is used to treat" .
+
+    wd:P279 rdfs:label "subclass of" ;
+        schema:description "this item is a subclass (subset) of that item; all instances of this item are instances of that item; different from P31 (instance of), e.g.: K2 is an instance of mountain; volcano is a subclass of mountain (and an instance of volcanic landform)" .
+
+    wd:P927 rdfs:label "anatomical location" ;
+        schema:description "where in the body or cell does this feature lie or happen" .`,
+      textual: `Pain can be treated with a pharmaceutical drug or therapy called celecoxib. Celecoxib is specifically used for the treatment of ankylosing spondylitis, which is a type of medical condition characterized by long-term inflammation of the joints of the spine. Ankylosing spondylitis falls under the category of spinal diseases, which are conditions involving the human vertebral column. The human vertebral column, in turn, is a specific type of the broader anatomical structure known as the vertebral column, which is a bony framework found in various vertebrate species, including humans.`,
+    },
   ];
 
   const processedPaths = [];
-  const parser = new N3.Parser();
-
-  for (let index in nThreeData) {
+  
+  for (let index in turtleData) {
+    const parser = new N3.Parser();
     const path = new N3.Store();
-
-    const entry = nThreeData[index];
+    const entry = turtleData[index];
 
     parser.parse(entry.rawPath, (_0, quad, _1) => {
       if (quad) {

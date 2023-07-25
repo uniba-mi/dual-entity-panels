@@ -4,7 +4,6 @@
 
   import {
     getLabelForId,
-    getPathEntities,
     getPathRelations,
   } from "../../util.js";
 
@@ -46,8 +45,6 @@ ${object} (${getLabelForId(object, theSelectedPath.parsedPath)})`;
         )})`;
       }
     }
-
-    console.log(arrowString);
   });
 </script>
 
