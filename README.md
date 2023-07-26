@@ -35,9 +35,9 @@ Inside the new container run:
 
 To implement additional presentation forms for the dual-entity knowledge panels, proceed as follows:
 
-1. Add another `svelte` file in the [modes](./src/lib/modes) folder with an appropriate name for your presentation form. This file will contain almost all your code. To start off, feel free to copy one the code from one of the other components within this folder.
-2. In the [stores.js](./src/stores.js) file add a string representing the label referring to your presentation form in the `modes` array.
-3. In the lower part of the [Panel.svelte](./src/lib/Panel.svelte) file, there is an if statement that maps the labels of the presentation forms to their corresponding `svelte` component. Following the shown pattern, add another else if to map the label you added in the `modes` array to the component you created in the first step. Don't forget to import your component in the top of the [Panel.svelte](./src/lib/Panel.svelte) file.
+1. Add another `svelte` file in the [formats](./src/lib/formats) folder with an appropriate name for your presentation form. This file will contain almost all your code. To start off, feel free to copy one the code from one of the other components within this folder.
+2. In the [stores.js](./src/stores.js) file add a string representing the label referring to your presentation form in the `formats` array.
+3. In the lower part of the [Panel.svelte](./src/lib/Panel.svelte) file, there is an if statement that maps the labels of the presentation forms to their corresponding `svelte` component. Following the shown pattern, add another else if to map the label you added in the `formats` array to the component you created in the first step. Don't forget to import your component in the top of the [Panel.svelte](./src/lib/Panel.svelte) file.
 4. Reload/start the application if necessary. You should now be able to select your presentation form via the same dropdown menu as the other presentation forms.
 
 ## License

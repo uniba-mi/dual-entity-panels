@@ -1,22 +1,22 @@
 <script>
-  import { selectedPath, modes } from "../stores.js";
+  import { selectedPath, formats } from "../stores.js";
   import { getLabelForId, getDescriptionForId } from "../util.js";
-  import TurtleMode from "./modes/TurtleMode.svelte";
-  import ArrowMode from "./modes/ArrowMode.svelte";
-  import GraphCircleMode from "./modes/GraphCircleMode.svelte";
-  import GraphHierarchyMode from "./modes/GraphHierarchyMode.svelte";
-  import LlmMode from "./modes/LlmMode.svelte";
+  import TurtleFormat from "./formats/TurtleFormat.svelte";
+  import ArrowFormat from "./formats/ArrowFormat.svelte";
+  import GraphCircleFormat from "./formats/GraphCircleFormat.svelte";
+  import GraphHierarchyFormat from "./formats/GraphHierarchyFormat.svelte";
+  import LlmFormat from "./formats/LlmFormat.svelte";
 
   let theSelectedPath;
-  let theModes;
+  let theFormats;
 
-  let selectedMode = "Turtle";
+  let selectedFormat = "Turtle";
 
   selectedPath.subscribe((value) => (theSelectedPath = value));
-  modes.subscribe((array) => (theModes = array));
+  formats.subscribe((array) => (theFormats = array));
 
   const handleDropdownClick = (event) => {
-    selectedMode = event.target.textContent;
+    selectedFormat = event.target.textContent;
   };
 </script>
 
@@ -112,13 +112,13 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                {selectedMode}
+                {selectedFormat}
               </button>
               <ul class="dropdown-menu">
-                {#each theModes as mode}
+                {#each theFormats as format}
                   <li>
                     <button class="dropdown-item" on:click={handleDropdownClick}
-                      >{mode}</button
+                      >{format}</button
                     >
                   </li>
                 {/each}
@@ -127,16 +127,16 @@
           </div>
         </div>
         <div class="row">
-          {#if selectedMode === "Turtle"}
-            <TurtleMode />
-          {:else if selectedMode === "Arrow"}
-            <ArrowMode />
-          {:else if selectedMode === "Graph: Circle"}
-            <GraphCircleMode />
-          {:else if selectedMode === "Graph: Hierarchy"}
-            <GraphHierarchyMode />
-          {:else if selectedMode === "LLM"}
-            <LlmMode />
+          {#if selectedFormat === "Turtle"}
+            <TurtleFormat />
+          {:else if selectedFormat === "Arrow"}
+            <ArrowFormat />
+          {:else if selectedFormat === "Graph: Circle"}
+            <GraphCircleFormat />
+          {:else if selectedFormat === "Graph: Hierarchy"}
+            <GraphHierarchyFormat />
+          {:else if selectedFormat === "LLM"}
+            <LlmFormat />
           {/if}
         </div>
       </div>
