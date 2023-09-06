@@ -48,7 +48,7 @@ export const loadPathData = () => {
     
     wd:P1535 rdfs:label "used by" ;
         schema:description "item or concept that makes use of the subject (use sub-properties when appropriate)" .`,
-      textual: `The found path signifies the relationship between "explanation" and "scientific method", highlighting how explanation is utilized in teaching, which contributes to the development of academic disciplines. These disciplines form the basis of scientific knowledge, leading to the application of the scientific method in the pursuit of understanding and testing scientific hypotheses.`,
+      textual: `"Explanation" involves constructing statements to describe facts and is integral to "teaching," the act of imparting knowledge. Teaching is a facet of "academic disciplines," which are linked to "science," a systematic knowledge-building enterprise. In the realm of science lies the "scientific method," covering mathematical and experimental techniques used in the natural sciences, including hypothesis construction and testing.`,
     },
     {
       entityA: "Q81938",
