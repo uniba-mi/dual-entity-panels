@@ -6,6 +6,9 @@
   import GraphCircleFormat from "./formats/GraphCircleFormat.svelte";
   import GraphHierarchyFormat from "./formats/GraphHierarchyFormat.svelte";
   import LlmFormat from "./formats/LlmFormat.svelte";
+  import HeatmapFormat from "./formats/HeatmapFormat.svelte";
+  import BarchartFormat from "./formats/BarchartFormat.svelte";
+  import NodelinkFormat from "./formats/NodelinkFormat.svelte";
 
   let theSelectedPath;
   let theFormats;
@@ -137,6 +140,12 @@
             <GraphHierarchyFormat />
           {:else if selectedFormat === "LLM"}
             <LlmFormat />
+          {:else if selectedFormat === "Heatmap"}
+            <HeatmapFormat />
+          {:else if selectedFormat === "Barchart"}
+            <BarchartFormat />
+          {:else if selectedFormat === "Nodelink"}
+            <NodelinkFormat />
           {/if}
         </div>
       </div>

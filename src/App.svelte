@@ -70,6 +70,6 @@
 
 <style>
   .fixed {
-    width: 550px;
+    width: 650px;
   }
 </style>
