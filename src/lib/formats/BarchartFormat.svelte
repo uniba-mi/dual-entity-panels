@@ -33,24 +33,27 @@
       let target = relation.object;
       let sourceLabel = getLabelForId(source, theSelectedPath.parsedPath);
       let targetLabel = getLabelForId(target, theSelectedPath.parsedPath);
+      let sourceDescription = getDescriptionForId(
+        source,
+        theSelectedPath.parsedPath
+      );
+      let targetDescription = getDescriptionForId(
+        relation.object,
+        theSelectedPath.parsedPath
+      );
+      let label = getLabelForId(relation.predicate, theSelectedPath.parsedPath);
 
       return {
         id: relation.predicate + index,
         source: source,
         sourceLabel: sourceLabel,
-        sourceDescription: getDescriptionForId(
-          source,
-          theSelectedPath.parsedPath
-        ),
+        sourceDescription: sourceDescription,
         target: target,
         targetLabel: targetLabel,
-        targetDescription: getDescriptionForId(
-          target,
-          theSelectedPath.parsedPath
-        ),
+        targetDescription: targetDescription,
         distance: parseInt(relation.semanticDistance),
         interpretation: relation.interpretation,
-        label: getLabelForId(relation.predicate, theSelectedPath.parsedPath),
+        label: label,
       };
     });
 

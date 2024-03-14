@@ -48,7 +48,7 @@
           target: relation.object,
           targetLabel: targetLabel,
           targetDescription: targetDescription,
-          distance: relation.semanticDistance,
+          distance: parseInt(relation.semanticDistance),
           interpretion: relation.interpretation,
           label: label,
         },
